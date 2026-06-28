@@ -1,0 +1,36 @@
+{
+  "name": "@apcinema/shared",
+  "version": "1.0.0",
+  "description": "APCinema shared utilities",
+  "keywords": [],
+  "author": {
+    "name": "Andrii P"
+  },
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@apcinema/core": "^1.0.4",
+    "@trivago/prettier-plugin-sort-imports": "^5.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}

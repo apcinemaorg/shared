@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+pnpm-lock.yaml
+.env
+.DS_Store
+.cursor/
+.log
+Thumbs.db
+.github/
+src/

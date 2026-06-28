@@ -1,0 +1,29 @@
+name: Publish Package
+on:
+  push:
+    branches:
+      - master
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    name: Publish Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install npm
+        run: npm install -g npm@11.5.1
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Publish Package
+        run: npm publish
