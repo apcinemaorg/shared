@@ -10,5 +10,6 @@ export * from './postgres.config.js';
 export * from './redis.config.js';
 export * from './rmq.config.js';
 export * from './smtp.config.js';
+export * from './movie-grpc.config.js';
 export * from './user-grpc.config.js';
 export * from './users-rmq.config.js';

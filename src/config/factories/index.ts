@@ -5,4 +5,5 @@ export * from './rmq.factory.js';
 export * from './smtp.factory.js';
 export * from './http.factory.js';
 export * from './auth-grpc.factory.js';
+export * from './movie-grpc.factory.js';
 export * from './user-grpc.factory.js';

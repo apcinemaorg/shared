@@ -8,6 +8,7 @@ import { postgresConfig } from './postgres.config.js';
 import { redisConfig } from './redis.config.js';
 import { rmqConfig } from './rmq.config.js';
 import { smtpConfig } from './smtp.config.js';
+import { movieGrpcConfig } from './movie-grpc.config.js';
 import { userGrpcConfig } from './user-grpc.config.js';
 import { usersRmqConfig } from './users-rmq.config.js';
 
@@ -42,6 +43,7 @@ export const gatewayConfigs: ConfigFactory[] = [
     httpConfig,
     authGrpcConfig,
     userGrpcConfig,
+    movieGrpcConfig,
 ];
 
 export const userServiceConfigs: ConfigFactory[] = [
@@ -49,6 +51,11 @@ export const userServiceConfigs: ConfigFactory[] = [
     userGrpcConfig,
     usersRmqConfig,
     avatarConfig,
+];
+
+export const movieServiceConfigs: ConfigFactory[] = [
+    postgresConfig,
+    movieGrpcConfig,
 ];
 
 export const notificationServiceConfigs: ConfigFactory[] = [

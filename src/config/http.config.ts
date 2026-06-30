@@ -16,7 +16,7 @@ export const httpConfig = registerAs(
     (): HttpConfig => ({
         host: readEnvString('HTTP_HOST'),
         port: readEnvNumber('HTTP_PORT'),
-        corsOrigins: readEnvString('HTTP_CORS').split(','),
+        corsOrigins: readEnvString('HTTP_CORS').split(',').map(origin => origin.trim()),
         swaggerTitle: readEnvString('SWAGGER_TITLE'),
         swaggerDescription: readEnvString('SWAGGER_DESCRIPTION'),
         swaggerVersion: readEnvString('SWAGGER_VERSION'),
