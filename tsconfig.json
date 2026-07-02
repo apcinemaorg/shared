@@ -4,6 +4,8 @@
     "moduleResolution": "nodenext",
     "resolvePackageJsonExports": true,
     "target": "ES2023",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
