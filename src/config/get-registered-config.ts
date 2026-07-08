@@ -1,13 +1,15 @@
-import { ConfigService } from '@nestjs/config';
-
 const PARTIAL_CONFIGURATION_KEY = 'PARTIAL_CONFIGURATION_KEY';
 
 type RegisteredConfigFactory = (() => unknown) & {
     [PARTIAL_CONFIGURATION_KEY]?: string;
 };
 
+export interface ConfigReader {
+    getOrThrow<T>(propertyPath: string): T;
+}
+
 export function getRegisteredConfig<T>(
-    configService: ConfigService,
+    configService: ConfigReader,
     configFactory: RegisteredConfigFactory,
 ): T {
     const namespace = configFactory[PARTIAL_CONFIGURATION_KEY];

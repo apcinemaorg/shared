@@ -23,6 +23,22 @@ export function readEnvNumber(key: string): number {
     return parsed;
 }
 
+export function readEnvNumberOptional(key: string, defaultValue: number): number {
+    const value = process.env[key];
+
+    if (value === undefined) {
+        return defaultValue;
+    }
+
+    const parsed = Number(value);
+
+    if (Number.isNaN(parsed)) {
+        throw new Error(`Environment variable ${key} must be a number`);
+    }
+
+    return parsed;
+}
+
 export function readEnvBoolean(key: string, defaultValue = false): boolean {
     const value = process.env[key];
 

@@ -1,5 +1,6 @@
 export * from './app-config.module.js';
 export * from './auth-grpc.config.js';
+export * from './avatar.config.js';
 export * from './env.js';
 export * from './factories/index.js';
 export * from './get-registered-config.js';
@@ -9,3 +10,5 @@ export * from './postgres.config.js';
 export * from './redis.config.js';
 export * from './rmq.config.js';
 export * from './smtp.config.js';
+export * from './user-grpc.config.js';
+export * from './users-rmq.config.js';
